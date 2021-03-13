@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kahoot</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="LoginContainer">
+        <div class="Login">
+            <h1 class="Name">Kahoot</h1>
+            <form id="LoginGame">
+                <input type="text" name="KahootName" id="KahootName" placeholder="Username" />
+                <input type="tel" name="KahootPin" id="KahootPin" maxlength="10" minlength="2" placeholder="Game Pin" />
+                <button type="submit">Enter</button>
+            </form>
+            <div class="Loading">
+                <img src="loading.gif" alt="" />
+            </div>
+        </div>
+        <button onclick="CreateServer()">TET</button>
+    </div>
+    <div class="PlayersInServer"></div>
+    <div class="Game">
+        <h1 id="PlayerCount">Player Count: 0</h1>
+        <div class="CurrentGame">
+            <div class="Lobby"></div>
+            <div class="Questions"></div>
+            <div class="WaitingForOtherAnswers">
+                <h1>Waiting for other players answers</h1>
+            </div>
+            <div class="Leaderboard"></div>
+            <div class="Winners"></div>
+            <div class="Enter1T2LChoises"></div>
+        </div>
+        <div class="Games">
+            <div class="Game">
+                <img src="https://www.thebostoncalendar.com/system/events/photos/000/307/133/original/Untitled.png?1576701591" alt="2 thruths and 1 lie" width="100px" />
+                <button onclick="ChooseGame(0)">Play</button>
+            </div>
+        </div>
+        <div class="YouAreIn">
+            <h1>You are in the game</h1>
+            <p>Wait for the host to select a game when everyone is in the game</p>
+        </div>
+    </div>
+    <div class="TEMP">
+        <h1 class="ServerPin"></h1>
+    </div>
+    <!--<script src="/node_modules/socket.io/client-dist/socket.io.js"></script>-->
+    <!--<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>-->
+    <script src="http://server-question-game.herokuapp.com/socket.io/socket.io.js"></script>
+    <script src="/Scripts/Games/1T2L.js"></script>
+    <script src="/Scripts/currentGame.js"></script>
+    <script src="/Scripts/HelpFunctions.js"></script>
+    <script src="/Scripts/socketHandler.js"></script>
+    <script src="/Scripts/API.js"></script>
+    <script src="/Scripts/enterGame.js"></script>
+</body>
+
+</html>
